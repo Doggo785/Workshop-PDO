@@ -1,5 +1,5 @@
 <?php
-include 'database.php';
+include '../config/database.php';
 ?>
 
 <?php
@@ -24,11 +24,11 @@ $result = $pdo->query($sql);
 $user = $result->fetch(PDO::FETCH_NUM);  // Tableau numérique
 echo nl2br("Statut (index) : {$user[3]}\n"); 
 
-$result = $pdo->query($sql); // Exécuter la requête à nouveau
+$result = $pdo->query($sql); 
 $user = $result->fetch(PDO::FETCH_ASSOC); // Tableau associatif
 echo nl2br("Statut (assoc) : {$user['statutAdmin']}\n");
 
-$result = $pdo->query($sql); // Exécuter la requête à nouveau
+$result = $pdo->query($sql); 
 $user = $result->fetch(PDO::FETCH_OBJ); // Objet anonyme
 echo nl2br("Statut (objet) : {$user->statutAdmin}\n");
 
