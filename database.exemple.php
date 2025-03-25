@@ -10,7 +10,7 @@ try {
     // Activer les exceptions pour les erreurs
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo "Connexion réussie !";
+    echo nl2br("Connexion réussie !\n\n");
 
 } catch (PDOException $e) {
     die("Échec de la connexion : " . $e->getMessage());
