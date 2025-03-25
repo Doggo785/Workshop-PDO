@@ -1,5 +1,5 @@
 <?php
-include '../database.php';
+include '../config/database.php';
 
 $pseudo = $_POST['pseudo'];
 $mdp = $_POST['mdp'];
