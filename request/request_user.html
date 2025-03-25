@@ -3,16 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-bottom: 20px; /* Ajout d'un espace entre les conteneurs */
+        }
+        .container + .container {
+            margin-top: 20px; /* Ajout d'un espace entre les conteneurs */
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-    <form action="request_user.php" method="post">
-        <label for="pseudo">Pseudo :</label>
-        <input type="text" id="pseudo" name="pseudo" required>
-        <br>
-        <label for="mdp">Mot de passe :</label>
-        <input type="password" id="mdp" name="mdp" required>
-        <br>
-        <input type="submit" value="Se connecter">
-    </form>
+    <div class="container">
+        <h2>Formulaire vulnérable à l'injection SQL</h2>
+        <form action="request_user_vulnerable.php" method="post">
+            <label for="pseudo_vuln">Pseudo :</label>
+            <input type="text" id="pseudo_vuln" name="pseudo" required>
+            <label for="mdp_vuln">Mot de passe :</label>
+            <input type="password" id="mdp_vuln" name="mdp" required>
+            <input type="submit" value="Se connecter">
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Formulaire sécurisé</h2>
+        <form action="request_user.php" method="post">
+            <label for="pseudo_sec">Pseudo :</label>
+            <input type="text" id="pseudo_sec" name="pseudo" required>
+            <label for="mdp_sec">Mot de passe :</label>
+            <input type="password" id="mdp_sec" name="mdp" required>
+            <input type="submit" value="Se connecter">
+        </form>
+    </div>
 </body>
 </html>
