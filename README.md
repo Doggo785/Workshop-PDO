@@ -16,4 +16,19 @@ Ce projet est un exemple d'utilisation de PDO (PHP Data Objects) pour se connect
 Pour tester la connexion à la base de données, exécutez le fichier `database.php` dans votre navigateur ou via la ligne de commande.
 
 ```bash
-php 
+php config/database.php
+```
+
+## Fonctionnalités
+
+- **Gandalf Finder** : Vérifie si l'utilisateur "Gandalf" existe dans la base de données.
+- **List User** : Affiche la liste des pseudos des utilisateurs.
+- **Request User** : Formulaire de connexion pour vérifier le pseudo et le mot de passe d'un utilisateur.
+
+## Exécution
+
+Pour exécuter les différents scripts, utilisez les liens suivants dans votre navigateur :
+
+- [Gandalf Finder](request/gandalf_finder.php)
+- [List User](request/list_user.php)
+- [Request User](request/request_user.html)
